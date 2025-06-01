@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Clone</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: white;
+      overflow-x: hidden;
+        display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+
+    }
+    .glow {
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(200,100,255,0.5) 0%, transparent 80%);
+      filter: blur(250px);
+      z-index: -1;
+    }
+    .glow.right {
+      top: -200px;
+      right: -200px;
+    }
+    .glow.purple {
+      top: -200px;
+      left: -200px;
+    }
+    .navbar {
+      background-color: white;
+      padding: 20px;
+        display: flex;
+  justify-content: center;
+
+    }
+    .nav-links a {
+      color: black;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .hero h2.highlight {
+      color: #DDA0DD;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #BA55D3;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .projects {
+      display: flex;
+flex-wrap: wrap;
+  justify-content: center;
+
+    
+    }
+    .project-card {
+      background-color: #2a1a2a;
+      padding: 15px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .project-card h3 {
+      color: #DA70D6;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <!-- Glowing background lights -->
+  <div class="glow purple"></div>
+  <div class="glow right"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="section hero">
+    <h2 class="highlight">Hi, my name is</h2>
+    <h1>Brahim Ben Youssef</h1>
+    <h3>I'm a Game Developer & Designer</h3>
+    <p>
+      I build immersive 2D and 3D experiences using Unity, blending creative design with interactive gameplay.
+    </p>
+    <a href="#contact" class="cta-button">Contact Me</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+      I'm a Unity-focused game developer and digital designer who creates engaging 2D and 3D experiences. Whether it's gameplay systems or visual polish, I bring ideas to life with code and creativity.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="project-card"> <img src="https://via.placeholder.com/400x200?text=Project+1" /><div><h3>Project 1</h3><p>Placeholder description.</p></div></div>
+      <div class="project-card"> <img src="https://via.placeholder.com/400x200?text=Project+2" /><div><h3>Project 2</h3><p>Placeholder description.</p></div></div>
+      <div class="project-card"> <img src="https://via.placeholder.com/400x200?text=Project+3" /><div><h3>Project 3</h3><p>Placeholder description.</p></div></div>
+      <div class="project-card"> <img src="https://via.placeholder.com/400x200?text=Project+4" /><div><h3>Project 4</h3><p>Placeholder description.</p></div></div>
+      <div class="project-card"> <img src="https://via.placeholder.com/400x200?text=Project+5" /><div><h3>Project 5</h3><p>Placeholder description.</p></div></div>
+      <div class="project-card"> <img src="https://via.placeholder.com/400x200?text=Project+6" /><div><h3>Project 6</h3><p>Placeholder description.</p></div></div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out if you'd like to work together or just say hi!</p>
+    <a href="mailto:brahim.by96@gmail.com" class="cta-button">Send Email</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">&copy; <span id="year"></span>. All rights reserved.</footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
