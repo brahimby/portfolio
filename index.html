@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Clone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brahim Ben Youssef – Portfolio</title>
   <style>
     body {
       margin: 0;
@@ -11,13 +11,7 @@
       background-color: #000;
       color: white;
       overflow-x: hidden;
-        display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  min-height: 100vh;
-
+      text-align: center;
     }
     .glow {
       position: absolute;
@@ -35,16 +29,22 @@
       top: -200px;
       left: -200px;
     }
-    .navbar {
-      background-color: white;
-      padding: 20px;
-        display: flex;
-  justify-content: center;
-
+  .navbar {
+  background-color: white;
+  padding: 20px;
+  width: fit-content;      /* shrink to content width */
+  margin: 20px auto 0;     /* top margin 20px, center horizontally, no bottom margin */
+  border: 2px solid #BA55D3; /* purple-ish border */
+  border-radius: 15px;     /* rounded corners */
+  box-shadow: 0 0 10px rgba(186, 85, 211, 0.5); /* subtle glow effect */
+}
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
     }
     .nav-links a {
       color: black;
-      margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
     }
@@ -65,12 +65,22 @@
       text-decoration: none;
       border-radius: 5px;
     }
+    .icon-links {
+      margin-top: 20px;
+    }
+    .icon-links a {
+      margin: 0 10px;
+      display: inline-block;
+    }
+    .icon-links img {
+      width: 30px;
+      height: 30px;
+    }
     .projects {
-      display: flex;
-flex-wrap: wrap;
-  justify-content: center;
-
-    
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
     .project-card {
       background-color: #2a1a2a;
@@ -90,6 +100,11 @@ flex-wrap: wrap;
       background-color: #111;
       font-size: 14px;
       color: #aaa;
+    }
+    .project-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
     }
   </style>
 </head>
@@ -131,12 +146,36 @@ flex-wrap: wrap;
   <section id="projects" class="section">
     <h2>My Projects</h2>
     <div class="projects">
-      <div class="project-card"> <img src="https://via.placeholder.com/400x200?text=Project+1" /><div><h3>Project 1</h3><p>Placeholder description.</p></div></div>
-      <div class="project-card"> <img src="https://via.placeholder.com/400x200?text=Project+2" /><div><h3>Project 2</h3><p>Placeholder description.</p></div></div>
-      <div class="project-card"> <img src="https://via.placeholder.com/400x200?text=Project+3" /><div><h3>Project 3</h3><p>Placeholder description.</p></div></div>
-      <div class="project-card"> <img src="https://via.placeholder.com/400x200?text=Project+4" /><div><h3>Project 4</h3><p>Placeholder description.</p></div></div>
-      <div class="project-card"> <img src="https://via.placeholder.com/400x200?text=Project+5" /><div><h3>Project 5</h3><p>Placeholder description.</p></div></div>
-      <div class="project-card"> <img src="https://via.placeholder.com/400x200?text=Project+6" /><div><h3>Project 6</h3><p>Placeholder description.</p></div></div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200?text=Project+1" alt="Project 1" />
+        <h3>Project 1</h3>
+        <p>Placeholder description.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200?text=Project+2" alt="Project 2" />
+        <h3>Project 2</h3>
+        <p>Placeholder description.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200?text=Project+3" alt="Project 3" />
+        <h3>Project 3</h3>
+        <p>Placeholder description.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200?text=Project+4" alt="Project 4" />
+        <h3>Project 4</h3>
+        <p>Placeholder description.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200?text=Project+5" alt="Project 5" />
+        <h3>Project 5</h3>
+        <p>Placeholder description.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200?text=Project+6" alt="Project 6" />
+        <h3>Project 6</h3>
+        <p>Placeholder description.</p>
+      </div>
     </div>
   </section>
 
@@ -144,14 +183,23 @@ flex-wrap: wrap;
   <section id="contact" class="section">
     <h2>Contact Me</h2>
     <p>Feel free to reach out if you'd like to work together or just say hi!</p>
-    <a href="mailto:brahim.by96@gmail.com" class="cta-button">Send Email</a>
+    <div class="icon-links">
+      <a href="https://www.linkedin.com/in/brahim-ben-youssef-20944a187/" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+      </a>
+      <a href="https://github.com/brahimby" target="_blank">
+        <img src="https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/Github_white.svg" alt="GitHub">
+      </a>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">&copy; <span id="year"></span>. All rights reserved.</footer>
+  <footer class="footer">
+    &copy; <span id="year"></span>. All rights reserved.
+  </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
