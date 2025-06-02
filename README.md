@@ -16,7 +16,7 @@ I'm a Unity-focused game developer and digital designer who creates engaging 2D 
 
 📫 Contact
 
-<a href="https://www.linkedin.com/in/brahim-ben-youssef-20944a187/" target="_blank" rel="noopener noreferrer">LinkedIn: My Profile</a>
+LinkedIn: <a href="https://www.linkedin.com/in/brahim-ben-youssef-20944a187/" target="_blank" rel="noopener noreferrer">My Profile</a>
 
 
 Feel free to customize this template further to better reflect your personal brand and the specifics of your projects. If you need assistance with deploying your portfolio or adding more features, don't hesitate to ask!
