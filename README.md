@@ -15,7 +15,8 @@ Interactive UI: Engaging user experience with smooth animations.
 I'm a Unity-focused game developer and digital designer who creates engaging 2D and 3D experiences. Whether it's gameplay systems or visual polish, I bring ideas to life with code and creativity.
 
 📫 Contact
-LinkedIn: [linkedin.com/in/yourprofile](https://www.linkedin.com/in/brahim-ben-youssef-20944a187/)
+
+LinkedIn: [My Profile](https://www.linkedin.com/in/brahim-ben-youssef-20944a187/)
 
 Feel free to customize this template further to better reflect your personal brand and the specifics of your projects. If you need assistance with deploying your portfolio or adding more features, don't hesitate to ask!
 
