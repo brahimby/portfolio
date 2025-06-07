@@ -43,6 +43,10 @@
       justify-content: center;
       gap: 20px;
     }
+      .nav-links a:hover {
+      color: #BA55D3;
+      transform: translateY(-2px);
+    }
     .nav-links a {
       color: black;
       text-decoration: none;
@@ -64,6 +68,12 @@
       color: white;
       text-decoration: none;
       border-radius: 5px;
+    }
+
+      .cta-button:hover {
+      background-color: #ffffff;
+     color:#BA55D3;
+
     }
     .icon-links {
       margin-top: 20px;
@@ -87,12 +97,15 @@
       padding: 15px;
       border-radius: 10px;
       transition: transform 0.3s;
+           
     }
     .project-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-20px);
     }
     .project-card h3 {
       color: #DA70D6;
+            
+
     }
     .footer {
       text-align: center;
@@ -105,6 +118,10 @@
       width: 100%;
       height: auto;
       border-radius: 5px;
+    }
+    .project-card-link {
+    text-decoration: none;
+   color: inherit;
     }
   </style>
 </head>
@@ -146,27 +163,34 @@
   <section id="projects" class="section">
     <h2>My Projects</h2>
     <div class="projects">
+     
       <div class="project-card">
-        <img src="https://via.placeholder.com/400x200?text=Project+1" alt="Project 1" />
-        <h3>Project 1</h3>
-        <p>Placeholder description.</p>
+         <a href="https://www.youtube.com/watch?v=3xDVXjmEFmo" target="_blank" class="project-card-link">
+        <img src="./Images/project1.jpg" alt="Project 1" />
+        <h3>VanGogh’s Syndrom</h3>
+        <p>VanGogh’s Syndrom is a global game jam game made in 24h the theme was lost and found.</p>
+      </div>
+      
+      <div class="project-card">
+        <a href="https://www.youtube.com/watch?v=iIRDI5ugp0c" target="_blank" class="project-card-link">
+        <img src="./Images/project2.jpg" alt="Project 2" />
+        <h3>Lian’s Legacy</h3>
+        <p>Lian’s Legacy is an action/adventure game based on story driven by revenge. </p>
       </div>
       <div class="project-card">
-        <img src="https://via.placeholder.com/400x200?text=Project+2" alt="Project 2" />
-        <h3>Project 2</h3>
-        <p>Placeholder description.</p>
+         <a href="https://www.youtube.com/watch?v=jw6rYJKw_wU" target="_blank" class="project-card-link">
+        <img src="./Images/project3.png" alt="Project 3" />
+        <h3>DizzyBall</h3>
+        <p>A fast-tap reflex game.Simple, addictive, and all about precision.</p>
       </div>
       <div class="project-card">
-        <img src="https://via.placeholder.com/400x200?text=Project+3" alt="Project 3" />
-        <h3>Project 3</h3>
-        <p>Placeholder description.</p>
+         <a href="https://github.com/brahimby/ElasticJoystick" target="_blank" class="project-card-link">
+        <img src="./Images/project4.png" alt="Project 4" />
+        <h3>Elastic Joystick</h3>
+        <p>A slick, responsive joystick made for Unity UI that stretches, rotates, and fires directional events.</p>
       </div>
-      <div class="project-card">
-        <img src="https://via.placeholder.com/400x200?text=Project+4" alt="Project 4" />
-        <h3>Project 4</h3>
-        <p>Placeholder description.</p>
-      </div>
-      <div class="project-card">
+      <!--
+     <div class="project-card">
         <img src="https://via.placeholder.com/400x200?text=Project+5" alt="Project 5" />
         <h3>Project 5</h3>
         <p>Placeholder description.</p>
@@ -175,7 +199,7 @@
         <img src="https://via.placeholder.com/400x200?text=Project+6" alt="Project 6" />
         <h3>Project 6</h3>
         <p>Placeholder description.</p>
-      </div>
+      </div>  -->
     </div>
   </section>
 
