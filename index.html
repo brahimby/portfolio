@@ -1,20 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" href="./Images/favicon.png" type="image/png" />
+  <link rel="icon" href="./Images/favicon.png" type="image/png" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Brahim Ben Youssef – Portfolio</title>
   <style>
+    :root {
+      --bg-color: #000;
+      --text-color: white;
+      --card-bg: #2a1a2a;
+      --link-color: black;
+      --highlight: #DDA0DD;
+    }
+    body.light {
+      --bg-color: #fff;
+      --text-color: #111;
+      --card-bg: #f4f4f4;
+      --link-color: #BA55D3;
+      --highlight: #BA55D3;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #000;
-      color: white;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       overflow-x: hidden;
       text-align: center;
+      transition: background 0.4s, color 0.4s;
     }
-    .glow {
+
+    .floating-bar {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.1);
+      border: 2px solid #BA55D3;
+      backdrop-filter: blur(10px);
+      padding: 8px 14px;
+      border-radius: 30px;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    body.light .floating-bar {
+      background: rgba(0, 0, 0, 0.1);
+    }
+ .glow {
       position: absolute;
       width: 1000px;
       height: 1000px;
@@ -22,23 +58,24 @@
       filter: blur(250px);
       z-index: -1;
     }
+
     .glow.right {
       top: -200px;
       right: -200px;
     }
+
     .glow.purple {
       top: -200px;
       left: -200px;
     }
 
-    .glow.center
-    {
+    .glow.center {
       width: 2000px;
       height: 2000px;
-      top:300px;
+      top: 300px;
       right: -300px;
-
     }
+
     .navbar {
       background-color: white;
       padding: 20px;
@@ -48,28 +85,34 @@
       border-radius: 15px;
       box-shadow: 0 0 10px rgba(186, 85, 211, 0.5);
     }
+
     .nav-links {
       display: flex;
       justify-content: center;
       gap: 20px;
     }
+
     .nav-links a:hover {
       color: #BA55D3;
       transform: translateY(-2px);
     }
+
     .nav-links a {
-      color: black;
+      color: var(--link-color);
       text-decoration: none;
       font-weight: bold;
     }
+
     .section {
       padding: 60px 20px;
       max-width: 900px;
       margin: auto;
     }
+
     .hero h2.highlight {
-      color: #DDA0DD;
+      color: var(--highlight);
     }
+
     .cta-button {
       display: inline-block;
       margin-top: 20px;
@@ -79,23 +122,26 @@
       text-decoration: none;
       border-radius: 5px;
     }
+
     .cta-button:hover {
       background-color: #ffffff;
       color: #BA55D3;
     }
+
     .icon-links {
       margin-top: 20px;
     }
+
     .icon-links a {
       margin: 0 10px;
       display: inline-block;
     }
+
     .icon-links img {
       width: 30px;
       height: 30px;
     }
 
-    /* UPDATED: Grid container centers last card */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -106,47 +152,126 @@
       margin: 0 auto;
     }
 
-    /* UPDATED: Card content vertically centered */
     .project-card {
-      background-color: #2a1a2a;
+      background-color: var(--card-bg);
       padding: 15px;
       border-radius: 10px;
-      transition: transform 0.3s;
+      transition: transform 0.3s, background-color 0.4s;
       display: flex;
       flex-direction: column;
       justify-content: center;
       text-align: center;
     }
+
     .project-card:hover {
       transform: translateY(-20px);
     }
+
     .project-card h3 {
       color: #DA70D6;
     }
+
     .project-card img {
       width: 100%;
-      height:auto;
+      height: auto;
       border-radius: 5px;
     }
+
     .project-card-link {
       text-decoration: none;
       color: inherit;
       display: block;
     }
+
     .footer {
       text-align: center;
       padding: 20px;
-      background-color:transparent;
+      background-color: transparent;
       font-size: 14px;
       color: #aaa;
     }
+
+  
+ .floating-bar a {
+      position: relative;
+      margin: 0 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: margin 0.3s ease;
+    }
+   
+
+    .floating-bar a:hover {
+      margin: 0 20px;
+    }
+
+    .floating-bar img {
+      width: 24px;
+      height: 24px;
+      transition: filter 0.3s ease;
+    }
+
+    .floating-bar a::after {
+      content: attr(data-label);
+      position: absolute;
+      bottom: 100%;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 4px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+      opacity: 0;
+      transform: translateY(5px);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .floating-bar a:hover::after {
+      opacity: 1;
+      transform: translateY(-5px);
+    }
+
+    .divider-line {
+      width: 1px;
+      height: 20px;
+      background-color: #BA55D3;
+      margin: 0 12px;
+    }
+
+   .toggle-icon {
+  cursor: pointer;
+  font-size: 20px;
+  transition: transform 0.3s;
+  user-select: none;
+  background: none;
+  border: none;
+  color: inherit;
+  padding: 0;
+}
+
+.toggle-icon:hover {
+  transform: scale(1.2);
+}
   </style>
 </head>
 <body>
-  <!-- Glowing background lights -->
+  <!-- Floating Glow -->
   <div class="glow purple"></div>
   <div class="glow right"></div>
 
+  <!-- Floating Bar -->
+  <div class="floating-bar">
+    <a href="https://www.linkedin.com/in/brahimby/" target="_blank" data-label="LinkedIn">
+      <img id="linkedin-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+    </a>
+    <a href="https://github.com/brahimby" target="_blank" data-label="GitHub">
+      <img id="github-icon" src="https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/Github_white.svg" alt="GitHub">
+    </a>
+    <div class="divider-line"></div>
+ <button onclick="toggleTheme()" class="toggle-icon" data-label="Toggle Theme">🌙</button>
+  </div>
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-links">
@@ -162,18 +287,14 @@
     <h2 class="highlight">Hi, my name is</h2>
     <h1>Brahim Ben Youssef</h1>
     <h3>I'm a Game Developer & Designer</h3>
-    <p>
-      I build immersive 2D and 3D experiences using Unity, blending creative design with interactive gameplay.
-    </p>
+    <p>I build immersive 2D and 3D experiences using Unity, blending creative design with interactive gameplay.</p>
     <a href="#contact" class="cta-button">Contact Me</a>
   </section>
 
   <!-- About Section -->
   <section id="about" class="section">
     <h2>About Me</h2>
-    <p>
-      I'm a Unity-focused game developer and digital designer who creates engaging 2D and 3D experiences. I write less here, more in the code.
-    </p>
+    <p>I'm a Unity-focused game developer and digital designer who creates engaging 2D and 3D experiences. I write less here, more in the code.</p>
   </section>
 
   <!-- Projects Section -->
@@ -207,17 +328,40 @@
           <h3>Elastic Joystick</h3>
           <p>A slick, responsive joystick made for Unity UI that stretches, rotates, and fires directional events.</p>
         </div>
-         <a href="https://www.youtube.com/watch?v=MUpGP7U0WmY" target="_blank" class="project-card-link">
+      </a>
+      <a href="https://www.youtube.com/watch?v=MUpGP7U0WmY" target="_blank" class="project-card-link">
         <div class="project-card">
           <img src="./Images/project5.jpg" alt="Project 5" />
           <h3>Split</h3>
           <p>Unique puzzle game where you switch between worlds to solve challenges. Each shift changes the map and puzzle elements, creating dynamic, creative gameplay with multiple solutions.</p>
         </div>
       </a>
+      <a href="https://youtu.be/rQU1RCrZQMg" target="_blank" class="project-card-link">
+        <div class="project-card">
+          <img src="./Images/project6.png" alt="Project 6" />
+          <h3>Animals Attack v1</h3>
+          <p>Animals Attack is a synergy-driven roguelike deckbuilder where you chain card abilities to create wild combos.</p>
+        </div>
+      </a>
+       <a href="https://www.youtube.com/watch?v=nzoRf77u_kk" target="_blank" class="project-card-link">
+        <div class="project-card">
+          <img src="./Images/project7.png" alt="Project 7" />
+          <h3>Multiplayer Games</h3>
+          <p>Four multiplayer games. Chess,Checkers, Connect four and Ludo</p>
+        </div>
+      </a>
+       <a href="https://youtu.be/N0IZZz_S-5A" target="_blank" class="project-card-link">
+        <div class="project-card">
+          <img src="./Images/project8.png" alt="Project 8" />
+          <h3>Animals Attack v2</h3>
+          <p>Four multiplayer games. Chess,Checkers, Connect four and Ludo</p>
+        </div>
       </a>
     </div>
   </section>
- <div class="glow center"></div>
+
+  <div class="glow center"></div>
+
   <!-- Contact Section -->
   <section id="contact" class="section">
     <h2>Contact Me</h2>
@@ -239,6 +383,24 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    function toggleTheme() {
+      document.body.classList.toggle("light");
+
+      const linkedinIcon = document.getElementById("linkedin-icon");
+      const githubIcon = document.getElementById("github-icon");
+      const toggleIcon = document.querySelector(".toggle-icon");
+
+      if (document.body.classList.contains("light")) {
+        linkedinIcon.src = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg";
+        githubIcon.src = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg";
+        toggleIcon.textContent = "☀️";
+      } else {
+        linkedinIcon.src = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg";
+        githubIcon.src = "https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/Github_white.svg";
+        toggleIcon.textContent = "🌙";
+      }
+    }
   </script>
 </body>
 </html>
