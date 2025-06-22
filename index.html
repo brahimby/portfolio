@@ -364,7 +364,7 @@
         <div class="project-card">
           <img src="./Images/project8.png" alt="Project 8" />
           <h3>Animals Attack v2</h3>
-          <p>Four multiplayer games. Chess,Checkers, Connect four and Ludo</p>
+          <p>Animals Attack is a synergy-driven roguelike deckbuilder where you chain card abilities to create wild combos.</p>
         </div>
       </a>
        <a href="https://www.youtube.com/watch?v=nzoRf77u_kk" target="_blank" class="project-card-link">
@@ -385,10 +385,10 @@
       <p>Feel free to reach out if you'd like to work together or just say hi!</p>
       <div class="icon-links">
         <a href="https://www.linkedin.com/in/brahimby/" target="_blank">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
         </a>
         <a href="https://github.com/brahimby" target="_blank">
-          <img src="https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/Github_white.svg" alt="GitHub">
+         <img id="github-contact-icon" src="https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/Github_white.svg" alt="GitHub">
         </a>
       </div>
     </section>
@@ -407,12 +407,15 @@
       const linkedinIcon = document.getElementById("linkedin-icon");
       const githubIcon = document.getElementById("github-icon");
       const toggleIcon = document.querySelector(".toggle-icon");
+      const githubContactIcon = document.getElementById("github-contact-icon");
 
       if (document.body.classList.contains("light")) {
         githubIcon.src = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg";
+        githubContactIcon.src = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"; // black icon
         toggleIcon.textContent = "☀️";
       } else {
         githubIcon.src = "https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/Github_white.svg";
+         githubContactIcon.src = "https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/Github_white.svg"; // white icon
         toggleIcon.textContent = "🌙";
       }
     }
