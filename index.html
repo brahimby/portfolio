@@ -49,7 +49,6 @@
       padding: 10px 15px;
       border: 1px solid var(--title-border);
       background-color: var(--title-bg);
-
       color: var(--title-color);
       border-radius: 50px;
       font-size: 18px;
@@ -64,7 +63,7 @@
       left: 50%;
       transform: translateX(-50%);
       display: flex;
-      align-items: absolute;
+      align-items: center;
       background: rgba(255,255,255,0.1);
       border: 2px solid #BA55D3;
       backdrop-filter: blur(10px);
@@ -264,6 +263,23 @@
 
     .toggle-icon:hover {
       transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+      .projects {
+        grid-template-columns: 1fr;
+      }
+      .floating-bar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+        gap: 10px;
+      }
+      .project-card img {
+        height: auto;
+        max-height: 200px;
+      }
     }
   </style>
 </head>
